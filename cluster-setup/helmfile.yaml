@@ -1,0 +1,21 @@
+---
+
+environments:
+  default:
+    kubeContext: kind-argocd-local-testing
+
+repositories:
+  - name: argo
+    url: https://argoproj.github.io/argo-helm
+
+releases:
+  - name: argocd
+    namespace: argocd
+    chart: argo/argo-cd
+    values:
+      - argocd-values.yaml
+  - name: argocd-apps
+    namespace: argocd
+    chart: argo/argocd-apps
+    values:
+      - argocd-apps-values.yaml
