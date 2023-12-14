@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: foo
-  annotations:
-    argocd.argoproj.io/sync-options: Prune=true
 spec:
   selector:
     matchLabels:
